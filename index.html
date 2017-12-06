@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Тестовое задание</title>
+		<meta name="description" content="Тестовое задание"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400&amp;subset=cyrillic" rel="stylesheet">
+		<link href="css/normalize.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/range.css" rel="stylesheet">
+	</head>
+	<body>
+		<nav id="sidebar">
+			<a class="nav-item mobile-only js-slide-menu" id="js-toggle-sidebar">Меню</a>
+			<a href="#personal" class="nav-item">Личная информация</a>
+			<a href="#expirience" class="nav-item">Опыт</a>
+			<a href="#js" class="nav-item">JavaScript</a>
+			<a href="#about" class="nav-item">О себе</a>
+		</nav>
+		<div class="wrapper">
+			<h1 class="content">Анкета</h1>
+			<section id="personal" class="personal content">
+				<h2>Личная информация</h2>
+				<form>
+					<input type="text" placeholder="ФИО" value="Ирина Соболева"/>
+					<select class="js-select-year active">
+						<option value="0">Год рождения</option>
+						<option value="1991" selected>1991</option>
+					</select>
+					<input type="text" placeholder="Место проживания" value="Москва/Нюрнберг"/>
+					<input type="text" placeholder="Skype" value="iralsob"/>
+					<input type="text" placeholder="e-mail" value="iralsob@gmail.com"/>
+				</form>
+			</section>
+			<section id="expirience" class="expirience content">
+				<h2>Расскажите о своем опыте</h2>
+				<form class="flex-content">
+					<input type="checkbox" name="checkbox" value="0" id="checkbox-1">
+					<label for="checkbox-1"  class="flex-item">БЭМ/OOCSS</label>
+					<input id="checkbox-2" checked type="checkbox" name="checkbox" value="0">
+					<label for="checkbox-2" class="flex-item">Верстаю семантично</label>
+					<input id="checkbox-3" type="checkbox" name="checkbox" value="0">
+					<label for="checkbox-3" class="flex-item">Webpack</label>
+					<input id="checkbox-4" checked type="checkbox" name="checkbox" value="0">
+					<label for="checkbox-4" class="flex-item">Stylus/LESS/SASS</label>
+					<input id="checkbox-5" type="checkbox" name="checkbox" value="0">
+					<label for="checkbox-5" class="flex-item">ES2015/ES2016</label>
+					<input id="checkbox-6" checked type="checkbox" name="checkbox" value="0">
+					<label for="checkbox-6" class="flex-item">jQuery</label>
+					<input id="checkbox-7" checked type="checkbox" name="checkbox" value="0">
+					<label for="checkbox-7" class="flex-item">Работаю с SVG</label>
+					<input id="checkbox-8" type="checkbox" name="checkbox" value="0">
+					<label for="checkbox-8" class="flex-item">Gulp/GRUNT</label>
+					<input id="checkbox-9" type="checkbox" name="checkbox" value="0">
+					<label for="checkbox-9" checked class="flex-item">Ипользую Git</label>
+				</form>
+			</section>
+			<section class="leveljs content" id="js">
+				<h2>Уровень владения JS</h2>
+				<div class="leveljs-step__wrap">
+					<div class="leveljs-step__item">Не владею</div>
+					<div class="leveljs-step__item">Использую готовые<br> решения</div>
+					<div class="leveljs-step__item">Использую готовые решения<br> и умею и переделывать</div>
+					<div class="leveljs-step__item">Пишу сложный JS с нуля</div>
+				</div>
+				<form class="mask-wrap">
+					<span class="mask"></span>
+					<span class="gradient" id="gradient"></span>
+					<input type="range" min="0" max="4" value="2" class="range blue" id="range"/>
+				</form>
+			</section>
+			<section class="about content" id="about">
+				<h2>Расскажите о себе</h2>
+				<p class="about__subtitle">Напишите несколько предложений, чем привлекла наша вакансия и что вы ожидаете от работы у нас.</p>
+				<form><textarea class="about__input" placeholder="Понравилась тем, что..." value="">Возможность удаленной работы</textarea></form>
+			</section>
+			<input type="submit" value="Готово" class="btn">
+		</div>
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>
