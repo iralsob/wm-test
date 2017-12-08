@@ -3,6 +3,7 @@ body {
   font-weight: 300;
   margin: 80px 0 75px;
   font-size: 70%;
+  overflow: hidden;
 }
 h1 {
   font-size: 4.375em;
