@@ -3,6 +3,7 @@ body {
   font-weight: 300;
   margin: 80px 0 75px;
   font-size: 70%;
+  overflow: hidden;
 }
 h1 {
   font-size: 4.375em;
@@ -129,7 +130,7 @@ input[type="text"]:focus {
 
 select {
   outline: 0;
-  width: 42%;
+  width: 68%;
   max-width: 320px;
   text-align-last: center;
 
@@ -260,6 +261,9 @@ input[type="checkbox"]:checked + label:before {
 @media (min-width: 768px) {
   body {
     font-size: 100%;
+  }
+  select {
+    width: 42%;
   }
   .mobile-only {
     display: none !important;
