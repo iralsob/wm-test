@@ -1,36 +1,20 @@
-var element = document.getElementById('sidebar');
-var trigger = document.getElementById('js-toggle-sidebar');
-
-var linkNav = document.querySelectorAll('[href^="#"]'),
-    V = 1;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
-for (var i = 0; i < linkNav.length; i++) {
-    linkNav[i].addEventListener('click', function(e) {
+/* меню */
+$(document).ready(function(){
+    $('.js-nav').click(function(e){
         e.preventDefault();
-        element.classList.toggle('open');
-        var w = window.pageYOffset,
-            hash = this.href.replace(/[^#]*(.*)/, '$1');
-        t = document.querySelector(hash).getBoundingClientRect().top,
-            start = null;
-        requestAnimationFrame(step);
-        function step(time) {
-            if (start === null) start = time;
-            var progress = time - start,
-                r = (t < 0 ? Math.max(w - progress/V, w + t - 60) : Math.min(w + progress/V, w + t - 60));
-            window.scrollTo(0,r);
-            if (r != w + t - 60) {
-                requestAnimationFrame(step)
-            } else {
-                location.hash = hash
-            }
-        }
-    }, false);
-}
-
-trigger.addEventListener('click', function(e) {
-    e.preventDefault();
-    element.classList.toggle('open');
+        $('.js-sidebar').removeClass('open');
+        var block = $($(this).attr('href'));
+        scrollTo = (block.offset().top - 60)+'px';
+        console.log(scrollTo - 60);
+        $('html').animate({
+            scrollTop: scrollTo
+        }, 2000);
+    });
+    $('.js-slide-menu').click(function(e){
+        e.preventDefault();
+        $('.js-sidebar').toggleClass('open');
+    });
 });
-
 
 /* 
 	Меняем цвет шрифта неактивного 
