@@ -48,3 +48,18 @@ function read(evtType) {
     });
   });
 }
+
+/* 
+	Меняем цвет шрифта неактивного 
+	select выбора года рождения 
+*/
+$(document).ready(function(){
+	$('.js-select-year').change(function(){
+		currValue = $(this).val();
+		if ( currValue == 0 ) {
+			$(this).removeClass('active');
+		} else if (!$(this).hasClass('active')) {
+			$(this).addClass('active');
+		}
+	});
+});
