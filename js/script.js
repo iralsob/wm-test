@@ -26,8 +26,6 @@ for (var i = 0; i < linkNav.length; i++) {
     }, false);
 }
 
-
-
 trigger.addEventListener('click', function(e) {
     e.preventDefault();
     element.classList.toggle('open');
