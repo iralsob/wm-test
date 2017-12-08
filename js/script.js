@@ -34,21 +34,6 @@ trigger.addEventListener('click', function(e) {
 });
 
 
-/* range change */
-var rng = document.getElementById('range');
-var gradient = document.getElementById('gradient');
-
-read("mousedown");
-read("mousemove");
-
-function read(evtType) {
-  rng.addEventListener(evtType, function() {
-    window.requestAnimationFrame(function () {
-      gradient.style.width = rng.value*25+'%';
-    });
-  });
-}
-
 /* 
 	Меняем цвет шрифта неактивного 
 	select выбора года рождения 
@@ -62,4 +47,12 @@ $(document).ready(function(){
 			$(this).addClass('active');
 		}
 	});
+});
+
+/* range change */
+$(document).ready(function(){
+    $('.js-range').change(function(){
+        currValue = $(this).val();
+        $('.js-gradient').css({'width':currValue*25+'%'});
+    });
 });
