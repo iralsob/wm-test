@@ -63,15 +63,17 @@ input[type=range]::-webkit-slider-thumb {
   position: relative;
   bottom: -20px;
   background-color: #fff;
-  background:url(../img/icon-range.png) no-repeat;
+  background-image:url(../img/icon-range.png);
   cursor: -webkit-grab;
 
+  background-repeat: no-repeat;
+  background-size: cover;
   -webkit-transition: border 1000ms ease;
   transition: border 1000ms ease;
 }
 @media (-webkit-min-device-pixel-ratio: 2) {
   input[type=range]::-webkit-slider-thumb {
-    background:url(../img/icon-range2x.png) no-repeat;
+    background-image:url(../img/icon-range2x.png);
   }
 }
 input[type=range]::-moz-range-thumb {

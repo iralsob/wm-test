@@ -26,25 +26,31 @@ for (var i = 0; i < linkNav.length; i++) {
     }, false);
 }
 
-
-
 trigger.addEventListener('click', function(e) {
     e.preventDefault();
     element.classList.toggle('open');
 });
 
 
+/* 
+	Меняем цвет шрифта неактивного 
+	select выбора года рождения 
+*/
+$(document).ready(function(){
+	$('.js-select-year').change(function(){
+		currValue = $(this).val();
+		if ( currValue == 0 ) {
+			$(this).removeClass('active');
+		} else if (!$(this).hasClass('active')) {
+			$(this).addClass('active');
+		}
+	});
+});
+
 /* range change */
-var rng = document.getElementById('range');
-var gradient = document.getElementById('gradient');
-
-read("mousedown");
-read("mousemove");
-
-function read(evtType) {
-  rng.addEventListener(evtType, function() {
-    window.requestAnimationFrame(function () {
-      gradient.style.width = rng.value*25+'%';
+$(document).ready(function(){
+    $('.js-range').change(function(){
+        currValue = $(this).val();
+        $('.js-gradient').css({'width':currValue*25+'%'});
     });
-  });
-}
+});
