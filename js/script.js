@@ -17,7 +17,7 @@ for (var i = 0; i < linkNav.length; i++) {
             var progress = time - start,
                 r = (t < 0 ? Math.max(w - progress/V, w + t - 60) : Math.min(w + progress/V, w + t - 60));
             window.scrollTo(0,r);
-            if (r != w + t) {
+            if (r != w + t - 60) {
                 requestAnimationFrame(step)
             } else {
                 location.hash = hash
